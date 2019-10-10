@@ -13,6 +13,7 @@
         <module>luckygou-eureka</module>
         <module>luckygou-plat-parent</module>
         <module>luckygou-zuul</module>
+        <module>luckygou-config-server</module>
     </modules>
 
     <properties>
