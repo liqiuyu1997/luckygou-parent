@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../luckygou-parent/luckygou-basic/basic-util/basic-util.iml" filepath="$PROJECT_DIR$/../luckygou-parent/luckygou-basic/basic-util/basic-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../luckygou-parent/luckygou-basic/luckygou-basic.iml" filepath="$PROJECT_DIR$/../luckygou-parent/luckygou-basic/luckygou-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../luckygou-parent/luckygou-eureka/luckygou-eureka.iml" filepath="$PROJECT_DIR$/../luckygou-parent/luckygou-eureka/luckygou-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/luckygou-parent.iml" filepath="$PROJECT_DIR$/luckygou-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../luckygou-parent/luckygou-plat-parent/luckygou-plat-parent.iml" filepath="$PROJECT_DIR$/../luckygou-parent/luckygou-plat-parent/luckygou-plat-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../luckygou-parent/luckygou-zuul/luckygou-zuul.iml" filepath="$PROJECT_DIR$/../luckygou-parent/luckygou-zuul/luckygou-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../luckygou-parent/luckygou-plat-parent/plat-interface/plat-interface.iml" filepath="$PROJECT_DIR$/../luckygou-parent/luckygou-plat-parent/plat-interface/plat-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../luckygou-parent/luckygou-plat-parent/plat-service/plat-service.iml" filepath="$PROJECT_DIR$/../luckygou-parent/luckygou-plat-parent/plat-service/plat-service.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+server:
+  port: 8899
+spring:
+  application:
+    name: LUCKYGOU-PLAT
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    appname: dnhjsak
+  client:
+    serviceUrl:
+      defaultZone: http://root:root@localhost:8761/eureka/
