@@ -19,8 +19,9 @@ public class LoginController {
     @ApiOperation(value = "登录的接口")
     @PostMapping("/login")
     public AjaxResult login(@RequestBody User user){
+        System.out.println("=======1");
         if("admin".equals(user.getUsername())&&"admin".equals(user.getPassword())){
-            return AjaxResult.me().setSuccess(true).setMessage("登录成功！");
+            return AjaxResult.me().setSuccess(true).setMessage("登录成功！").setRestObj(user);
 
         }
         return AjaxResult.me().setSuccess(false).setMessage("登录失败！");
