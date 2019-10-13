@@ -9,12 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>luckygou-basic</artifactId>
+    <artifactId>luckygou-product-parent</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>basic-util</module>
-        <module>basic-generator</module>
+        <module>product-interface</module>
+        <module>product-service</module>
     </modules>
 
+    <dependencies>
+
+    </dependencies>
 
 </project>
