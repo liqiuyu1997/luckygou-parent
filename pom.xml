@@ -15,6 +15,7 @@
         <module>luckygou-zuul</module>
         <module>luckygou-config-server</module>
         <module>luckygou-product-parent</module>
+        <module>luckygou-common-parent</module>
     </modules>
 
     <properties>
