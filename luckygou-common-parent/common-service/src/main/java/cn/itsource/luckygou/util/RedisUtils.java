@@ -20,7 +20,7 @@ public enum RedisUtils {
         config.setMaxWaitMillis(10 * 1000L);//最长等待时间
         config.setTestOnBorrow(true);//测试连接时是否畅通
         //3 通过配置对象创建连接池对象
-        jedisPool = new JedisPool(config, "127.0.0.1", 6379, 10 * 1000, "root");
+        jedisPool = new JedisPool(config, "127.0.0.1", 6379, 10 * 1000, "itsource");
     }
 
     //获取连接

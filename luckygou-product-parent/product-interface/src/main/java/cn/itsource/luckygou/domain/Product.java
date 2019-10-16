@@ -10,9 +10,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
- * <p>
- * 商品
- * </p>
+ * <p>商品</p>
  *
  * @author qiuyu
  * @since 2019-10-14

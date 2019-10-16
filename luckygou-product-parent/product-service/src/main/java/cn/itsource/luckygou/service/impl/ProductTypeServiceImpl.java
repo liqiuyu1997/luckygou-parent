@@ -24,7 +24,7 @@ import java.util.Map;
  * 商品目录 服务实现类
  * </p>
  *
- * @author solargen
+ * @author qiuyu
  * @since 2019-10-12
  */
 @Service

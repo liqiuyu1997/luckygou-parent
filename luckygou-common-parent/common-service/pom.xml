@@ -70,6 +70,14 @@
             <artifactId>velocity</artifactId>
             <version>1.7</version>
         </dependency>
+
+        <!--fastdfs-->
+        <dependency>
+            <groupId>cn.itsource</groupId>
+            <artifactId>fastdfs</artifactId>
+            <version>1.20</version>
+        </dependency>
+
     </dependencies>
 
     <build>

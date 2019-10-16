@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
  * 品牌信息
  * </p>
  *
- * @author solargen
+ * @author qiuyu
  * @since 2019-10-12
  */
 @Data

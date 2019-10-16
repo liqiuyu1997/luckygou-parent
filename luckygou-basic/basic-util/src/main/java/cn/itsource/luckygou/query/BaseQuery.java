@@ -1,10 +1,10 @@
 package cn.itsource.luckygou.query;
 
 /**
- * @author solargen
+ * @author qiuyu
  * @version 1.0
  * @description TODO
- * @date 2019/10/12 11:13
+ * @date 2019/10/12 19:33
  */
 public class BaseQuery {
 
