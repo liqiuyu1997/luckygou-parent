@@ -2,6 +2,7 @@ package cn.itsource.luckygou.mapper;
 
 import cn.itsource.luckygou.domain.Specification;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Component;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author qiuyu
  * @since 2019-10-17
  */
+@Component
 public interface SpecificationMapper extends BaseMapper<Specification> {
 
 }

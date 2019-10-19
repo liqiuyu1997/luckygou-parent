@@ -57,4 +57,10 @@
         </where>
     </sql>
 
+    <update id="updateViewProperties">
+        update t_product
+        set viewProperties = #{viewProperties}
+        where id = #{productId}
+    </update>
+
 </mapper>

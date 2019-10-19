@@ -17,10 +17,12 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface ProductMapper extends BaseMapper<Product> {
     /**
-     * mybatisplus规定的
+     * mybatisplus规定的mapper
      * @param page
      * @param query
      * @return
      */
     IPage queryPage(Page page,@Param("query") ProductQuery query);
+
+    void updateViewProperties(@Param("productId") Long productId,@Param("viewProperties") String viewProperties);
 }

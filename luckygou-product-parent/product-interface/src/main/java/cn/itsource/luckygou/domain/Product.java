@@ -149,4 +149,16 @@ public class Product implements Serializable {
     public ProductExt getExt() {
         return ext;
     }
+
+    public String getViewProperties() {
+        return viewProperties;
+    }
+
+    public Long getProductTypeId() {
+        return productTypeId;
+    }
+
+    public String getSkuProperties() {
+        return skuProperties;
+    }
 }
