@@ -63,4 +63,10 @@
         where id = #{productId}
     </update>
 
+    <update id="updateSkuProperties">
+        update t_product
+        set skuProperties = #{skuProperties}
+        where id = #{productId}
+    </update>
+
 </mapper>

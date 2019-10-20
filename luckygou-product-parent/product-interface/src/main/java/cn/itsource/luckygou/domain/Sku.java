@@ -101,10 +101,35 @@ public class Sku implements Serializable {
     @TableField("skuMainPic")
     private String skuMainPic;
 
-    private String index;
+    private String indexs;
 
 
     public Long getId() {
         return id;
+    }
+
+    public void setCreateTime(long createTime) {
+        this.createTime = createTime;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
+
+    public void setSkuName(String skuName) {
+        this.skuName = skuName;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setAvailableStock(int availableStock) {
+        this.availableStock = availableStock;
+    }
+
+
+    public void setIndexs(String indexs) {
+        this.indexs = indexs;
     }
 }

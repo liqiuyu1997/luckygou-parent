@@ -6,6 +6,7 @@ import cn.itsource.luckygou.domain.Product;
 import cn.itsource.luckygou.query.ProductQuery;
 import cn.itsource.luckygou.util.AjaxResult;
 import cn.itsource.luckygou.util.PageList;
+import cn.itsource.luckygou.vo.SkusVo;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,7 +75,6 @@ public class ProductController {
 
     /**
     * 分页查询数据
-    *
     * @param query 查询对象
     * @return PageList 分页对象
     */
@@ -138,4 +138,17 @@ public class ProductController {
     public List<Specification> getSkuProperties(@PathVariable("productId") Long productId){
         return productService.getSkuProperties(productId);
     }
+
+    /**
+     * 保存sku属性
+     * @param productId
+     * @param skusVo
+     * @return
+     */
+    @PostMapping("/updateSkuProperties")
+    public AjaxResult updateSkuProperties(@RequestParam("productId")Long productId,@RequestBody SkusVo skusVo){
+        productService.saveSkuProperties(productId,skusVo.getSkuProperties(),skusVo.getSkus());
+        return AjaxResult.me();
+    }
+
 }

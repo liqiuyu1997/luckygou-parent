@@ -16,13 +16,11 @@ import org.apache.ibatis.annotations.Param;
  * @since 2019-10-17
  */
 public interface ProductMapper extends BaseMapper<Product> {
-    /**
-     * mybatisplus规定的mapper
-     * @param page
-     * @param query
-     * @return
-     */
+    //mybatisplus规定的mapper
     IPage queryPage(Page page,@Param("query") ProductQuery query);
 
     void updateViewProperties(@Param("productId") Long productId,@Param("viewProperties") String viewProperties);
+
+    //修改商品的sku属性
+    void updateSkuProperties(@Param("productId") Long productId, @Param("skuProperties") String skuPropertiesJSON);
 }

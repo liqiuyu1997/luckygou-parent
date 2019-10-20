@@ -7,6 +7,7 @@ import cn.itsource.luckygou.util.PageList;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -25,4 +26,6 @@ public interface IProductService extends IService<Product> {
     void saveViewProperties(Long productId, List<Specification> viewProperties);
     //根据商品ID查询商品的sku属性
     List<Specification> getSkuProperties(Long productId);
+    //保存sku
+    void saveSkuProperties(Long productId, List<Specification> skuProperties, List<Map<String, String>> skus);
 }
