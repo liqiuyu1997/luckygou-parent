@@ -132,4 +132,8 @@ public class Sku implements Serializable {
     public void setIndexs(String indexs) {
         this.indexs = indexs;
     }
+
+    public Integer getPrice() {
+        return price;
+    }
 }

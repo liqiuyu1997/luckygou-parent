@@ -106,4 +106,8 @@ public class ProductType implements Serializable {
     public Long getPid() {
         return pid;
     }
+
+    public String getName() {
+        return name;
+    }
 }

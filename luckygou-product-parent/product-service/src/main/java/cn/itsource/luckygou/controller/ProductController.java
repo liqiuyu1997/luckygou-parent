@@ -6,6 +6,7 @@ import cn.itsource.luckygou.domain.Product;
 import cn.itsource.luckygou.query.ProductQuery;
 import cn.itsource.luckygou.util.AjaxResult;
 import cn.itsource.luckygou.util.PageList;
+import cn.itsource.luckygou.util.StrUtils;
 import cn.itsource.luckygou.vo.SkusVo;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -150,5 +151,35 @@ public class ProductController {
         productService.saveSkuProperties(productId,skusVo.getSkuProperties(),skusVo.getSkus());
         return AjaxResult.me();
     }
+
+    /**
+     * 批量上架
+     */
+    @GetMapping("/onSale")
+    public AjaxResult onSale(@RequestParam("ids") String ids){
+        try {
+            List<Long> idList = StrUtils.splitStr2LongArr(ids);
+            productService.onSale(idList);
+            return AjaxResult.me().setMessage("上架成功!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return AjaxResult.me().setSuccess(false).setMessage("上架失败!"+e.getMessage());
+        }
+    }
+
+    /**
+     * 批量下架
+     */
+    @GetMapping("/offSale") public AjaxResult offSale(@RequestParam("ids") String ids){
+        try {
+            List<Long> idList = StrUtils.splitStr2LongArr(ids);
+            productService.offSale(idList);
+            return AjaxResult.me().setMessage("下架成功!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return AjaxResult.me().setSuccess(false).setMessage("下架失 败!"+e.getMessage());
+        }
+    }
+
 
 }

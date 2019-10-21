@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * <p>
  * 商品 Mapper 接口
@@ -23,4 +25,9 @@ public interface ProductMapper extends BaseMapper<Product> {
 
     //修改商品的sku属性
     void updateSkuProperties(@Param("productId") Long productId, @Param("skuProperties") String skuPropertiesJSON);
+    //商品上架
+    void onSale(@Param("ids") List<Long> ids,@Param("onSaleTime") Long onSaleTime);
+
+    //商品下架
+    void offSale(@Param("ids") List<Long> ids,@Param("offSaleTime") Long offSaleTime);
 }

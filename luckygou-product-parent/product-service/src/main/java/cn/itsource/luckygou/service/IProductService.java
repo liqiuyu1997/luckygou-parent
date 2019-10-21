@@ -28,4 +28,8 @@ public interface IProductService extends IService<Product> {
     List<Specification> getSkuProperties(Long productId);
     //保存sku
     void saveSkuProperties(Long productId, List<Specification> skuProperties, List<Map<String, String>> skus);
+    //批量上架
+    void onSale(List<Long> idList);
+    //批量下架
+    void offSale(List<Long> idList);
 }

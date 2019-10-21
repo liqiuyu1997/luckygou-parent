@@ -17,7 +17,7 @@
 					#foreach ($secondType in $firstType.children)
 					<dl class="fore1">
 						<dt style="width: 4em;">
-							<a href="/list?productType=${secondType.id}" target="_blank" title="$secondType.name"> <em>$secondType.name</em> <i>&gt;</i>
+							<a href="/list.html?productType=${secondType.id}" target="_blank" title="$secondType.name"> <em>$secondType.name</em> <i>&gt;</i>
 							</a>
 						</dt>
 						<dd>
