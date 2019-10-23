@@ -188,8 +188,35 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
          client.deleteBatch(idList);
     }
 
+    /**
+     * 在线商城搜索商品
+     * @param param
+     * @return
+     */
+    @Override
+    public PageList<Product> queryOnSale(ProductParam param) {
+        //查询es中的数据
+        PageList<ProductDoc> pageList = client.search(param);
 
-        /**
+        //封装成PageList
+        List<Product> list = new ArrayList<>();
+        Product p = null;
+        for (ProductDoc doc : pageList.getRows()) {
+            p = new Product();
+            p.setMedias(doc.getMedias());
+            p.setId(doc.getId());
+            p.setName(doc.getName());
+            p.setSubName(doc.getSubName());
+            p.setSaleCount(doc.getSaleCount());
+            p.setMaxPrice(doc.getMaxPrice());
+            p.setMinPrice(doc.getMinPrice());
+            list.add(p);
+        }
+        return new PageList<>(pageList.getTotal(),list);
+    }
+
+
+    /**
          * 集合转换
          * @param products
          * @return

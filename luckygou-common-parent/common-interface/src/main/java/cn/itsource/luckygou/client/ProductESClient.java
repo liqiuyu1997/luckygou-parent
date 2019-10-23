@@ -1,6 +1,8 @@
 package cn.itsource.luckygou.client;
 
 import cn.itsource.luckygou.domain.ProductDoc;
+import cn.itsource.luckygou.domain.ProductParam;
+import cn.itsource.luckygou.util.PageList;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,4 +26,12 @@ public interface ProductESClient {
      */
     @PostMapping("/es/deleteBath")
     void deleteBatch(@RequestBody List<Long> ids);
+
+    /**
+     * es的搜索
+     * @param param
+     * @return
+     */
+    @PostMapping("/es/products")
+    public PageList<ProductDoc> search(@RequestBody ProductParam param);
 }

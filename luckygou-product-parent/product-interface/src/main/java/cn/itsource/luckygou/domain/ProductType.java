@@ -110,4 +110,8 @@ public class ProductType implements Serializable {
     public String getName() {
         return name;
     }
+
+    public String getPath() {
+        return path;
+    }
 }

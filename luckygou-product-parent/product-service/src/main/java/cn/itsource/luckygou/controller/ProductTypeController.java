@@ -5,6 +5,7 @@ import cn.itsource.luckygou.domain.ProductType;
 import cn.itsource.luckygou.query.ProductTypeQuery;
 import cn.itsource.luckygou.util.AjaxResult;
 import cn.itsource.luckygou.util.PageList;
+import cn.itsource.luckygou.vo.ProductTypeCrumbVo;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,6 +110,16 @@ public class ProductTypeController {
             e.printStackTrace();
             return AjaxResult.me().setSuccess(false).setMessage("失败!"+e.getMessage());
         }
+    }
+
+    /**
+     * 加载面包屑
+     * @param productTypeId
+     * @return
+     */
+    @GetMapping("/crumb")
+    public List<ProductTypeCrumbVo> loadTypeCrumb(@RequestParam("productTypeId") Long productTypeId){
+        return productTypeService.loadTypeCrumb(productTypeId);
     }
 
 

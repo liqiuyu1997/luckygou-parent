@@ -1,6 +1,7 @@
 package cn.itsource.luckygou.service;
 
 import cn.itsource.luckygou.domain.Product;
+import cn.itsource.luckygou.domain.ProductParam;
 import cn.itsource.luckygou.domain.Specification;
 import cn.itsource.luckygou.query.ProductQuery;
 import cn.itsource.luckygou.util.PageList;
@@ -32,4 +33,6 @@ public interface IProductService extends IService<Product> {
     void onSale(List<Long> idList);
     //批量下架
     void offSale(List<Long> idList);
+    //在线商城搜索商品
+    PageList<Product> queryOnSale(ProductParam param);
 }

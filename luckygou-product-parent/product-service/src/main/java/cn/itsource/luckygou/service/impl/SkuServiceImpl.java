@@ -3,8 +3,11 @@ package cn.itsource.luckygou.service.impl;
 import cn.itsource.luckygou.domain.Sku;
 import cn.itsource.luckygou.mapper.SkuMapper;
 import cn.itsource.luckygou.service.ISkuService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +20,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class SkuServiceImpl extends ServiceImpl<SkuMapper, Sku> implements ISkuService {
 
+    /**
+     * 查询价格
+     * @param productId
+     * @return
+     */
+    @Override
+    public List<Sku> getPrices(Long productId) {
+        return baseMapper.selectList(new QueryWrapper<Sku>().eq("product_id", productId));
+    }
 }

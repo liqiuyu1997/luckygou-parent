@@ -5,6 +5,7 @@ import cn.itsource.luckygou.client.StaticPageClient;
 import cn.itsource.luckygou.domain.ProductType;
 import cn.itsource.luckygou.mapper.ProductTypeMapper;
 import cn.itsource.luckygou.service.IProductTypeService;
+import cn.itsource.luckygou.vo.ProductTypeCrumbVo;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -53,6 +54,47 @@ public class ProductTypeServiceImpl extends ServiceImpl<ProductTypeMapper, Produ
         model.put("staticRoot","D:\\ymsd\\luckygou-parent\\luckygou-product-parent\\product-service\\src\\main\\resources\\");
         staticPageClient.generateStaticPage(templatePath,targetPath,model);
     }
+
+    /**
+     * 加载面包屑
+     * @param productTypeId
+     * @return
+     */
+    @Override public List<ProductTypeCrumbVo> loadTypeCrumb(Long productTypeId) {
+        //根据当前类型查询所有父级别的类型   path字段
+        // 当前类型    
+        ProductType currentType = baseMapper.selectById(productTypeId);
+        //path
+        String path = currentType.getPath();
+        //分割path  
+        List<Long> ids = pathSplit(path);
+        //查询各个级别的类型
+        List<ProductType> productTypes = baseMapper.selectBatchIds(ids);
+        List<ProductTypeCrumbVo> result = new ArrayList<>();
+
+        //封装数据  
+        ProductTypeCrumbVo vo = null;
+        for (ProductType productType : productTypes) {
+            vo = new ProductTypeCrumbVo();
+            vo.setCurrentType(productType);
+            //其他同级别的类型      
+            List<ProductType> otherTypes = baseMapper.selectList(new
+                    QueryWrapper<ProductType>().eq("pid", productType.getPid()));
+            vo.setOtherTypes(otherTypes);
+            result.add(vo);
+        }
+         return result;
+    }
+
+    private List<Long> pathSplit(String path) {
+        String[] idArr = path.substring(1).split("\\.");
+        List<Long> idList = new ArrayList<>();
+        for (String idStr : idArr) {
+            idList.add(Long.parseLong(idStr));
+        }
+        return idList;
+    }
+
 
     /**
      * 加载类型树

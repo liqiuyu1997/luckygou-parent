@@ -351,4 +351,8 @@ public class Product implements Serializable {
     public String getMedias() {
         return medias;
     }
+
+    public void setMedias(String medias) {
+        this.medias = medias;
+    }
 }

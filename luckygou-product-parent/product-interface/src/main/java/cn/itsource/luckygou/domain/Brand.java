@@ -82,4 +82,8 @@ public class Brand implements Serializable {
     public void setFirstLetter(String firstLetter) {
         this.firstLetter = firstLetter;
     }
+
+    public String getFirstLetter() {
+        return firstLetter;
+    }
 }
