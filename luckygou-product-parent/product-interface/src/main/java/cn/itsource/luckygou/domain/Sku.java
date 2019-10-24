@@ -136,4 +136,8 @@ public class Sku implements Serializable {
     public Integer getPrice() {
         return price;
     }
+
+    public Integer getAvailableStock() {
+        return availableStock;
+    }
 }

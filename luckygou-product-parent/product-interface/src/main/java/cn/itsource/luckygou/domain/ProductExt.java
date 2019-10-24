@@ -53,4 +53,8 @@ public class ProductExt implements Serializable {
     public void setProductId(Long productId) {
         this.productId = productId;
     }
+
+    public String getRichContent() {
+        return richContent;
+    }
 }
